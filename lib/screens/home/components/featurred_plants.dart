@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 
-
-
 class FeaturedPlants extends StatelessWidget {
   const FeaturedPlants({
     Key? key,
     required this.listItems,
   }) : super(key: key);
   final List<String> listItems;
-
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +21,9 @@ class FeaturedPlants extends StatelessWidget {
             press: () {},
           ),
           FeaturePlantCard(
-            // image: "assets/images/bottom_img_2.png",
-            image: listItems[1],
-            press: () {},
-          ),
+              // image: "assets/images/bottom_img_2.png",
+              image: listItems[1],
+              press: () {}),
         ],
       ),
     );

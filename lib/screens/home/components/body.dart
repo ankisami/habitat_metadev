@@ -11,9 +11,16 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     // It will provie us total height  and width of our screen
     Size size = MediaQuery.of(context).size;
-    const List<String> furnitureItems = ["assets/images/dena-grey1.jpeg", "assets/images/dena-white1.jpeg"];
-    const List<String> plantsItems = ["assets/images/bottom_img_1.png", "assets/images/bottom_img_2.png"];
+    const List<String> furnitureItems = [
+      "assets/images/dena-grey1.jpeg",
+      "assets/images/dena-white1.jpeg"
+    ];
+    const List<String> plantsItems = [
+      "assets/images/bottom_img_1.png",
+      "assets/images/bottom_img_2.png"
+    ];
     // it enable scrolling on small device
+
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,7 +29,9 @@ class Body extends StatelessWidget {
           TitleWithMoreBtn(title: "Recomended", press: () {}),
           const RecomendsPlants(),
           TitleWithMoreBtn(title: "Featured Furniture", press: () {}),
-          const FeaturedPlants(listItems: furnitureItems),
+          const FeaturedPlants(
+            listItems: furnitureItems,
+          ),
           TitleWithMoreBtn(title: "Featured Plants", press: () {}),
           const FeaturedPlants(listItems: plantsItems),
           const SizedBox(height: kDefaultPadding),
