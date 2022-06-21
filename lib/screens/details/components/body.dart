@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_metadev/constants.dart';
+import 'package:habitat_metadev/screens/arView/videoPlayer.dart';
 
 import 'image_and_icons.dart';
 import 'title_and_price.dart';
 
 class Body extends StatelessWidget {
-    const Body({
+  const Body({
     Key? key,
   }) : super(key: key);
   @override
@@ -25,11 +26,18 @@ class Body extends StatelessWidget {
                 child: FlatButton(
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topRight:  Radius.circular(20),
+                      topRight: Radius.circular(20),
                     ),
                   ),
                   color: kPrimaryColor,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VideoPlayerScreen(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     "Try in AR",
                     style: TextStyle(
