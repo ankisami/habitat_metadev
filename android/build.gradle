@@ -15,8 +15,13 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        flatDir {
+         dirs "${project(':unityExport').projectDir}/libs"
+        }
     }
 }
+
+
 
 rootProject.buildDir = '../build'
 subprojects {
