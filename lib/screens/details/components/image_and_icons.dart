@@ -14,9 +14,9 @@ class ImageAndIcons extends StatefulWidget {
   int selectedImage = 0;
 
   static List<String> images = [
-    "assets/images/dena-grey1.jpeg",
-    "assets/images/dena-grey2.jpeg",
-    "assets/images/dena-grey3.jpeg",
+    "assets/images/tabouret-light.png",
+    "assets/images/tabouret.png",
+    "assets/images/tabouret-dark.png",
   ];
   @override
   State<StatefulWidget> createState() {
@@ -59,14 +59,14 @@ class _ImageAndIconsState extends State<ImageAndIcons> {
                           });
                         }),
                     IconCard(
-                        icon: "assets/colors/655549.png",
+                        icon: "assets/colors/e1dcd2.png",
                         press: () {
                           setState(() {
                             widget.selectedImage = 1;
                           });
                         }),
                     IconCard(
-                        icon: "assets/colors/e1dcd2.png",
+                        icon: "assets/colors/655549.png",
                         press: () {
                           setState(() {
                             widget.selectedImage = 2;
@@ -97,6 +97,7 @@ class _ImageAndIconsState extends State<ImageAndIcons> {
                 image: DecorationImage(
                   alignment: Alignment.centerLeft,
                   fit: BoxFit.cover,
+                  scale: 0.5,
                   // image: AssetImage("assets/images/img.png"),
                   image: AssetImage(ImageAndIcons.images[widget.selectedImage]),
                 ),
