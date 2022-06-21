@@ -6,9 +6,11 @@ class IconCard extends StatelessWidget {
   const IconCard({
     Key? key,
     required this.icon,
+    required this.press,
   }) : super(key: key);
 
   final String icon;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,9 @@ class IconCard extends StatelessWidget {
             ),
           ],
         ),
-        child: Image.asset(icon, height: 62, width: 62, fit: BoxFit.cover));
+        child: FlatButton(
+          child: Image.asset(icon, height: 62, width: 62, fit: BoxFit.cover),
+          onPressed: press,
+        ));
   }
 }
