@@ -40,6 +40,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     // Complete the code in the next step.
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: FutureBuilder(
         future: _initializeVideoPlayerFuture,
@@ -47,15 +48,19 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           if (snapshot.connectionState == ConnectionState.done) {
             // If the VideoPlayerController has finished initialization, use
             // the data it provides to limit the aspect ratio of the video.
-            return AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              // Use the VideoPlayer widget to display the video.
-              child: FittedBox(
-                fit: BoxFit.cover,
-                child: SizedBox(
-                  width: _controller.value.size.width,
-                  height: _controller.value.size.height,
-                  child: VideoPlayer(_controller),
+            return SizedBox(
+              width: size.width,
+              height: size.height,
+              child: AspectRatio(
+                aspectRatio: _controller.value.aspectRatio,
+                // Use the VideoPlayer widget to display the video.
+                child: FittedBox(
+                  fit: BoxFit.cover,
+                  child: SizedBox(
+                    width: _controller.value.size.width,
+                    height: _controller.value.size.height,
+                    child: VideoPlayer(_controller),
+                  ),
                 ),
               ),
             );
