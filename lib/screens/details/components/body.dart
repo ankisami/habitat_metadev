@@ -16,7 +16,7 @@ class Body extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ImageAndIcons(size: size),
-          const TitleAndPrice(title: "Angelica", country: "Russia", price: 440),
+          const TitleAndPrice(title: "Stool", country: "France", price: 110),
           const SizedBox(height: kDefaultPadding),
           Row(
             children: <Widget>[
@@ -49,7 +49,14 @@ class Body extends StatelessWidget {
               ),
               Expanded(
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => ProductDescription(),
+                    //   ),
+                    // );
+                  },
                   child: const Text("Description"),
                 ),
               ),
